@@ -1,11 +1,12 @@
 #here we are integrating the read part and the write part
 
 
-import pandas as pd
-import sys
 import os
-from read import get_json_reader
-from write import load_db_table
+import sys
+
+from app.read import get_json_reader
+from app.write import load_db_table
+
 
 def process_table(BASE_DIR, conn, table_name):
     json_reader = get_json_reader(BASE_DIR, table_name)
