@@ -9,7 +9,13 @@ def load_db_table(df, conn, table_name, key):
 if __name__ == '__main__':
     import pandas as pd
     import os
-    df = 'a'
-    conn = 'Docker exec -it retail psql -U retail_user -d retail_db'
+    data = [
+        {'user_id': 1, 'user_first_name': 'Scott', 'user_last_name': 'Tiger'},
+        {'user_id': 2, 'user_first_name': 'Donald', 'user_last_name': 'Duck'}
+    ]
+    df = pd.DataFrame(data)
+    configs = dict(os.environ.items())
+    conn = f'postgresql://{configs["DB_USER"]}:{configs["DB_PASS"]}@{configs["DB_HOST"]}:{configs["DB_PORT"]}/{configs["DB_NAME"]}'
+
     load_db_table(df, conn, 'users','user_id')
 
