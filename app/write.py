@@ -18,4 +18,3 @@ if __name__ == '__main__':
     conn = f'postgresql://{configs["DB_USER"]}:{configs["DB_PASS"]}@{configs["DB_HOST"]}:{configs["DB_PORT"]}/{configs["DB_NAME"]}'
 
     load_db_table(df, conn, 'users','user_id')
-

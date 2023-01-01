@@ -1,11 +1,12 @@
+# def __init__.py
 #here we are integrating the read part and the write part
 
 
 import os
 import sys
 
-from app.read import get_json_reader
-from app.write import load_db_table  #press control space to list the functions in the programs
+from read import get_json_reader
+from write import load_db_table  #press control space to list the functions in the programs
 
 
 def process_table(BASE_DIR, conn, table_name):

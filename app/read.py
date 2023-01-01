@@ -2,6 +2,7 @@ import os
 import pandas as pd
 
 #This function will read file path from different locations of the folder
+
 def get_json_reader(BASE_DIR, table_name, chunksize=1000):
     file_name = os.listdir(f'{BASE_DIR}/{table_name}')[0]
     fp = f'{BASE_DIR}/{table_name}/{file_name}'
@@ -16,6 +17,3 @@ if __name__ == "__main__":
 
     for idx, df in enumerate(json_reader):
         print(f'Number of records in chunk with index {idx} is  {df.shape[0]}')
-
-
-
