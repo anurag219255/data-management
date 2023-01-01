@@ -1,7 +1,7 @@
 # def __init__.py
 #here we are integrating the read part and the write part
 
-#modifying file
+#modifying file in the app
 
 import os
 import sys
